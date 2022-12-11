@@ -18,17 +18,18 @@ Digital tools specially created to support the work of CHWs have been making it 
 
 
 #### The Solution + Desired Impact
-The DataKind team will harness a user-centered process to develop a dashboard using Superset to demonstrate the functionality of DOT and the insights it generates using a sample dataset provided by BRAC. 
+The DataKind team will harness a user-centered process to develop a dashboard using <a href = "https://superset.apache.org/">Superset<a> to demonstrate the functionality of DOT and the insights it generates using a sample dataset provided by BRAC. 
 
 The project will be implemented with the guiding principle to ensure reproducibility of the approach  such that demo dashboards can be generated for when DOT is presented to increasingly wider audiences (in the near, post-iCoHS future, the dashboard will use a synthetic dataset that will be released alongside DOT - currently in development by another DataKind team). 
 
 The demo dashboard will help end-users understand the insights into IoP data flagged by DOT. As individuals at these organizations become more comfortable with DOT, the dashboard can be used for training others and also on making decisions on remediation actions to be prioritized. Thus, the utility of the dashboard will grow - motivating users to invest the time to customize their dashboards per their needs in the future. 
 
 ## Data Summary
-### To provide the team with inputs for the dashboard, DataKind collaborators will:
-#### Prepare a static DB dump using the BRAC sample dataset
-#### Configure DOT against this data to create some test results
-#### Produce a DB dump which has the BRAC data and associated DOT stuff
+### To provide the team with inputs for the dashboard, DataKind collaborators performed the below tasks:
+#### 1. Preparing a static DB dump using the BRAC sample dataset
+#### 2. Configuring DOT against this data to create some test results
+#### 3. Producing a DB dump which has the BRAC data and associated DOT stuff
+#### 4. Designing a dashboard that allows to map KPIs onto superset 
 
 This is a sample dataset that has been used to build this dashboard
 
