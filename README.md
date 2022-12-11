@@ -34,7 +34,48 @@ The demo dashboard will help end-users understand the insights into IoP data fla
 This is a sample dataset that has been used to build this dashboard
 
 <a href="https://drive.google.com/drive/folders/1bQdNNBqnaODDFzQosn4J5zRZBD8EYDsE">Sample data dump</a>
+  
+### Some useful Superset dashboard related queries
+  
+#### Select entities and test results performed on entities in DOT
+  
+#####  SELECT 
+#####   tr.test_id,
+#####   tr.status,
+#####   dot.get_test_result_data_record(ce.entity_name, tr.id_column_name, 
+#####   tr.id_column_value,'public_tests')
+##### FROM
+#####   dot.scenarios s,
+#####   dot.configured_tests ct,
+#####   dot.configured_entities ce,
+#####   dot.test_results tr
+##### WHERE 
+#####   s.scenario_id=ct.scenario_id AND
+#####   tr.test_id=ct.test_id and 
+#####   ce.entity_id=ct.entity_id
+##### LIMIT 10
 
+##### Select internal between DOT runs to interpret results
+  
+##### select
+##### min(run_start)::date as previous_run_date
+##### ,max(run_start)::date as current_run_date
+##### ,case
+#####		when (max(run_start::date)-min(run_start::date))=0 then max(run_start)::date + 7
+#####		else max(run_start)::date + (max(run_start::date)-min(run_start::date))
+#####	 end as next_run_date
+#####	,case
+#####		when (max(run_start::date)-min(run_start::date))=0 then 7
+#####		else (max(run_start::date)-min(run_start::date) )
+#####	 end as cadence_in_days
+##### from
+##### (
+#####	select *
+#####	from dot.run_log rl
+#####	where project_id =‘Brac’
+#####	order by run_start desc
+#####	limit 2
+##### )
 
 
 
