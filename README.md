@@ -37,7 +37,7 @@ This is a sample dataset that has been used to build this dashboard
   
 ### Some useful Superset dashboard related queries
   
-#### Select entities and test results performed on entities in DOT
+### Select entities and test results performed on entities in DOT
   
 #####  SELECT 
 #####   tr.test_id,
@@ -55,7 +55,7 @@ This is a sample dataset that has been used to build this dashboard
 #####   ce.entity_id=ct.entity_id
 ##### LIMIT 10
 
-##### Select internal between DOT runs to interpret results
+### Select internal between DOT runs to interpret results
   
 ##### select
 ##### min(run_start)::date as previous_run_date
